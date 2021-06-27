@@ -1,0 +1,82 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Filters</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <p>Launch year</p>
+      <div fxLayout="row wrap" fxLayoutGap="10px grid">
+        <ng-container *ngFor="let item of launchYears; let i = index">
+          <div fxFlex="50">
+            <button
+              class="custom-btn"
+              mat-button
+              (click)="setFormValues('launch_year', item)"
+              [ngClass]="
+                filterForm.value.launch_year === item ? 'selected-btn' : ''
+              "
+            >
+              {{ item }}
+            </button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div>
+      <p>Successful Launch</p>
+      <div fxLayout="row wrap">
+        <div fxFlex="50">
+          <button
+            class="custom-btn"
+            mat-button
+            (click)="setFormValues('launch_success', true)"
+            [ngClass]="filterForm.value.launch_success ? 'selected-btn' : ''"
+          >
+            True
+          </button>
+        </div>
+        <div fxFlex="50">
+          <button
+            class="custom-btn"
+            mat-button
+            (click)="setFormValues('launch_success', false)"
+            [ngClass]="
+              filterForm.value.launch_success === false ? 'selected-btn' : ''
+            "
+          >
+            False
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p>Successful Landing</p>
+      <div fxLayout="row wrap">
+        <div fxFlex="50">
+          <button
+            class="custom-btn"
+            mat-button
+            (click)="setFormValues('land_success', true)"
+            [ngClass]="filterForm.value.land_success ? 'selected-btn' : ''"
+          >
+            True
+          </button>
+        </div>
+        <div fxFlex="50">
+          <button
+            class="custom-btn"
+            mat-button
+            (click)="setFormValues('land_success', false)"
+            [ngClass]="
+              filterForm.value.land_success === false ? 'selected-btn' : ''
+            "
+          >
+            False
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

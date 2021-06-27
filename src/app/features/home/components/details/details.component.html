@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-content>
+    <div
+      fxLayout="row wrap"
+      fxLayoutGap="10px grid"
+      fxLayoutAlign="start start"
+    >
+      <ng-container *ngFor="let program of spaceXRecords">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.md="50%" fxFlex.sm="50%">
+          <app-details-card [programDetails]="program"></app-details-card>
+        </div>
+      </ng-container>
+    </div>
+  </mat-card-content>
+</mat-card>

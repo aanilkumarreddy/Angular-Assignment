@@ -1,0 +1,28 @@
+<mat-card>
+  <img
+    mat-card-image
+    [src]="programDetails?.links?.mission_patch"
+    [alt]="programDetails?.mission_name"
+  />
+  <mat-card-header>
+    <mat-card-title>
+      {{ programDetails?.mission_name }} # {{ programDetails?.flight_number }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <ul>
+        Mission Ids:
+        <ng-container *ngFor="let missionId of programDetails?.mission_id">
+          <li>{{ missionId }}</li>
+        </ng-container>
+      </ul>
+      Launch year: {{ programDetails?.launch_year }}
+
+      Successful Launch:
+      {{ programDetails?.launch_success }}
+
+      Successful Landing: {{ programDetails?.launch_landing }}
+    </div>
+  </mat-card-content>
+</mat-card>
